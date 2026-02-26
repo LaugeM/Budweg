@@ -9,5 +9,10 @@ namespace Budweg.Models
         public int EmployeeId { get; set; }
         public string Initials { get; set; }
         public string Department { get; set; }
+
+        public Employee(int employeeId)
+        {
+            EmployeeId = employeeId;
+        }
     }
 }

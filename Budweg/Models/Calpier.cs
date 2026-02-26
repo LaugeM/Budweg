@@ -11,5 +11,10 @@ namespace Budweg.Models
         public bool Approval { get; set; }
         public string ModelNumber { get; set; }
         public DateOnly? RegistrationDate { get; set; }
+
+        public Calpier(int stampNumber)
+        {
+            StampNumber = stampNumber;
+        }
     }
 }
