@@ -4,9 +4,13 @@ using System.Text;
 
 namespace Budweg.Models
 {
-    public class StationRepository : RepoBase<Station>
+    public class StationRepository : BaseRepo<Station>
     {
         public StationRepository() : base()
+        {
+        }
+
+        public override void Add(Station station)
         {
         }
     }
