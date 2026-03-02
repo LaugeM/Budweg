@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Budweg.Models
 {
-    public class CalpierRepository : RepoBase<Calpier>
+    public class CaliperRepository : RepoBase<Calpier>
     {
-        public CalpierRepository() : base()
+        public CaliperRepository() : base()
         {
         }
     }

@@ -12,9 +12,8 @@ namespace Budweg.Models
         public bool ProcessStatus { get; set; }
         private DateTime SaleDate { get; set; }
         
-        public Batch(int batchNumber)
+        public Batch()
         {
-            BatchNumber = batchNumber;
         }
 
     }
