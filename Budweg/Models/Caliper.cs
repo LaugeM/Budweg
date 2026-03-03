@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Budweg.Models
 {
-    public class Calpier
+    public class Caliper
     {
         public int StampNumber { get; set; }
         public string Manufacturer { get; set; }
@@ -12,7 +12,7 @@ namespace Budweg.Models
         public string ModelNumber { get; set; }
         public DateOnly? RegistrationDate { get; set; }
 
-        public Calpier()
+        public Caliper()
         {
         }
     }
