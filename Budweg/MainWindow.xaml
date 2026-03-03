@@ -11,7 +11,7 @@
     mc:Ignorable="d">
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -57,7 +57,7 @@
                         BorderBrush="DarkGray"
                         DisplayMemberPath="Value"
                         ItemsSource="{Binding ApprovedOptions}"
-                        SelectedValue="{Binding SelectedIncome.Approval, Mode=TwoWay}"
+                        SelectedValue="{Binding CurrentEntity.Approval, Mode=TwoWay}"
                         SelectedValuePath="Key"
                         Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" />
 
