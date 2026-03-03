@@ -9,11 +9,27 @@ namespace Budweg.ViewModels
     {
         public RegCaliperViewModel() : base(new CaliperRepository())
         {
+            CurrentEntity.Approval = false;
+            CurrentEntity.RegistrationDate = DateOnly.FromDateTime(DateTime.Now);
         }
+
+
 
         public override bool CheckEntity()
         {
-            return true;
+            bool result = true;
+
+            if (string.IsNullOrWhiteSpace(CurrentEntity.Manufacturer))
+            {
+                result = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(CurrentEntity.ModelNumber))
+            {
+                result = false;
+            }
+
+            return result;
         }
 
     }
