@@ -9,15 +9,26 @@
     Width="700"
     Height="450"
     mc:Ignorable="d">
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="162" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Border
             Grid.Row="0"
-            Margin="0,0,0,10"
+            Padding="8"
+            VerticalAlignment="Top"
+            Background="#00AC58" Height="162">
+            <StackPanel>
+                <TextBlock Text="BUDWEG" Margin="0,30,0,0" FontSize="50" HorizontalAlignment="Center" Foreground="White" />
+            </StackPanel>
+        </Border>
+
+        <Border
+            Grid.Row="1"
+            Margin="0,10,0,10"
             Padding="8"
             VerticalAlignment="Top"
             Background="#00AC58">
