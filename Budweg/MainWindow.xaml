@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Budweg"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="700">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Border Grid.Row="0" Background="LightGreen" Padding="8" Margin="0,0,0,10" VerticalAlignment="Top">
+            <Border.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </Border.Resources>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,10,0" Orientation="Vertical">
+                    <TextBlock Text="StampNumber" />
+                    <TextBox x:Name="StampNumberTextBox" Width="150" />
+                </StackPanel>
+
+                <StackPanel Margin="0,0,10,0" Orientation="Vertical">
+                    <TextBlock Text="Manufacturer" />
+                    <TextBox x:Name="ManufacturerTextBox" Width="120" />
+                </StackPanel>
+                
+                <StackPanel Margin="0,0,10,0" Orientation="Vertical">
+                    <TextBlock Text="Approval" />
+                    <ComboBox Width="150">
+                        <ComboBoxItem>Approved</ComboBoxItem>
+                        <ComboBoxItem>Denied</ComboBoxItem>
+                    </ComboBox>
+
+                </StackPanel>
+
+                <StackPanel Margin="0,0,10,0" Orientation="Vertical">
+                    <TextBlock Text="ModelNumber" />
+                    <TextBox x:Name="ModelNumberTextBox" Width="80" />
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Bottom" Orientation="Vertical">
+                    <Button
+            x:Name="AddButton"
+            Width="90"
+            Margin="0,0,0,5"
+            Content="Registrer kaliber" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <DataGrid
+    x:Name="FilmsDataGrid"
+    Grid.Row="1"
+    AutoGenerateColumns="True" />
     </Grid>
 </Window>
