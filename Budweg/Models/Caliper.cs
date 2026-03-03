@@ -8,7 +8,7 @@ namespace Budweg.Models
     {
         public int? StampNumber { get; set; }
         public string Manufacturer { get; set; }
-        public bool Approval { get; set; }
+        public bool Approval { get; set; } = false;
         public string ModelNumber { get; set; }
         public DateOnly? RegistrationDate { get; set; }
 
