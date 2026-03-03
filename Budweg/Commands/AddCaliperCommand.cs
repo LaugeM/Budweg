@@ -20,7 +20,7 @@ namespace Budweg.Commands
 
             if (parameter is RegCaliperViewModel rvm)
             {
-                if (rvm.SelectedIncome != null && rvm.CheckSelectedIncomeInRepo() == false)
+                if (rvm.CheckEntity() == false )
                 {
                     result = false;
                 }
@@ -32,7 +32,7 @@ namespace Budweg.Commands
         {
             if (parameter is RegCaliperViewModel rvm)
             {
-                rvm.AddCaliper();
+                rvm.AddToRepo();
             }
             else
             {
