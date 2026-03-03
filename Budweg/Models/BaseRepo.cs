@@ -6,13 +6,13 @@ using System.Text;
 
 namespace Budweg.Models
 {
-    public abstract class RepoBase<TEntity>
+    public abstract class BaseRepo<TEntity>
     where TEntity : class, new()
     {
         protected readonly string ConnectionString;
         protected List<TEntity> entities;
 
-        protected RepoBase()
+        protected BaseRepo()
         {
             IConfigurationRoot config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
@@ -26,5 +26,7 @@ namespace Budweg.Models
         {
             return new SqlConnection(ConnectionString);
         }
+
+        public abstract void Add(TEntity entity);
     }
 }

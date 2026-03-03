@@ -6,7 +6,7 @@ namespace Budweg.Models
 {
     public class Caliper
     {
-        public int StampNumber { get; set; }
+        public int? StampNumber { get; set; }
         public string Manufacturer { get; set; }
         public bool Approval { get; set; }
         public string ModelNumber { get; set; }

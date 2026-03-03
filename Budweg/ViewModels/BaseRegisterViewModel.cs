@@ -1,16 +1,46 @@
-﻿using System;
+﻿using Budweg.Models;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Budweg.ViewModels
 {
-    public abstract class BaseRegisterViewModel<TEntity>
+    public abstract class BaseRegisterViewModel<TEntity> : SuperClassViewModel
     where TEntity : class, new()
     {
+        private TEntity entity = new();
+        protected BaseRepo<TEntity> entityRepo;
 
-        public virtual TEntity CreateEntity()
+        protected BaseRegisterViewModel(BaseRepo<TEntity> repo)
         {
-            return new TEntity();
+            entityRepo = repo;
+        }
+
+        private protected TEntity _currentEntity;
+        public TEntity CurrentEntity
+        {
+            get
+            {
+                return _currentEntity;
+            }
+            set
+            {
+                if (_currentEntity == value) return;
+                _currentEntity = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public abstract bool CheckEntity();
+
+
+        protected void AddToRepo()
+        {
+            if (CheckEntity())
+            {
+                entityRepo.Add(entity);
+            }
         }
     }
 }
