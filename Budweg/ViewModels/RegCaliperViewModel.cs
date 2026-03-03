@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Budweg.Commands;
 using Budweg.Models;
 
 namespace Budweg.ViewModels
@@ -13,7 +15,7 @@ namespace Budweg.ViewModels
             CurrentEntity.RegistrationDate = DateOnly.FromDateTime(DateTime.Now);
         }
 
-
+        public ICommand AddCaliperCommand { get; } = new AddCaliperCommand();
 
         public override bool CheckEntity()
         {

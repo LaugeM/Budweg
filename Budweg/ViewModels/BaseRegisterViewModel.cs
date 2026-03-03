@@ -15,6 +15,7 @@ namespace Budweg.ViewModels
         protected BaseRegisterViewModel(BaseRepo<TEntity> repo)
         {
             entityRepo = repo;
+            CurrentEntity = entity;
         }
 
         private protected TEntity _currentEntity;
@@ -35,7 +36,7 @@ namespace Budweg.ViewModels
         public abstract bool CheckEntity();
 
 
-        protected void AddToRepo()
+        public void AddToRepo()
         {
             if (CheckEntity())
             {
