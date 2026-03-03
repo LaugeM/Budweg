@@ -17,6 +17,21 @@ namespace Budweg.ViewModels
             entityRepo = repo;
         }
 
+        private protected TEntity _currentEntity;
+        public TEntity CurrentEntity
+        {
+            get
+            {
+                return _currentEntity;
+            }
+            set
+            {
+                if (_currentEntity == value) return;
+                _currentEntity = value;
+                OnPropertyChanged();
+            }
+        }
+
         public abstract bool CheckEntity();
 
 
