@@ -11,9 +11,8 @@ namespace Budweg.Models
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        public Station(int stationNumber)
+        public Station()
         {
-            StationNumber = stationNumber;
         }
     }
 }

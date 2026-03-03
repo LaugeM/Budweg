@@ -1,17 +1,18 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Budweg.Models
 {
-    public abstract class RepoBase<TEntity>
-    where TEntity : class
+    public abstract class BaseRepo<TEntity>
+    where TEntity : class, new()
     {
         protected readonly string ConnectionString;
         protected List<TEntity> entities;
 
-        protected RepoBase()
+        protected BaseRepo()
         {
             IConfigurationRoot config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
@@ -20,5 +21,12 @@ namespace Budweg.Models
             entities = new List<TEntity>();
             ConnectionString = config.GetConnectionString("MyDBConnection");
         }
+
+        protected SqlConnection CreateConnection()
+        {
+            return new SqlConnection(ConnectionString);
+        }
+
+        public abstract void Add(TEntity entity);
     }
 }
