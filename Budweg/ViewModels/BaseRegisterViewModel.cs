@@ -9,7 +9,7 @@ namespace Budweg.ViewModels
     public abstract class BaseRegisterViewModel<TEntity> : SuperClassViewModel
     where TEntity : class, new()
     {
-        private TEntity entity = new();
+        protected TEntity entity = new();
         protected BaseRepo<TEntity> entityRepo;
 
         protected BaseRegisterViewModel(BaseRepo<TEntity> repo)
