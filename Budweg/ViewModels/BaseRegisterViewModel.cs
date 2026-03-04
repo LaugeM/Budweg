@@ -9,12 +9,13 @@ namespace Budweg.ViewModels
     public abstract class BaseRegisterViewModel<TEntity> : SuperClassViewModel
     where TEntity : class, new()
     {
-        private TEntity entity = new();
+        protected TEntity entity = new();
         protected BaseRepo<TEntity> entityRepo;
 
         protected BaseRegisterViewModel(BaseRepo<TEntity> repo)
         {
             entityRepo = repo;
+            CurrentEntity = entity;
         }
 
         private protected TEntity _currentEntity;
@@ -35,7 +36,7 @@ namespace Budweg.ViewModels
         public abstract bool CheckEntity();
 
 
-        protected void AddToRepo()
+        public void AddToRepo()
         {
             if (CheckEntity())
             {

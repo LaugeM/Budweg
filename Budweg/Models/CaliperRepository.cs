@@ -26,6 +26,7 @@ namespace Budweg.Models
                     cmd.Parameters.Add("@Approval", SqlDbType.Bit).Value = caliper.Approval;
                     cmd.Parameters.Add("@ModelNumber", SqlDbType.NVarChar).Value = caliper.ModelNumber;
                     cmd.Parameters.Add("@RegistrationDate", SqlDbType.Date).Value = caliper.RegistrationDate;
+                    var result = cmd.ExecuteScalar();
                 }
             }
         }
