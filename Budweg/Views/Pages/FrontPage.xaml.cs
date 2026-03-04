@@ -1,4 +1,5 @@
-﻿using Budweg.ViewModels;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,20 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Budweg
+namespace Budweg.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FrontPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FrontPage : Page
     {
-        RegCaliperViewModel rvm = new();
-        public MainWindow()
+        public FrontPage()
         {
             InitializeComponent();
-            DataContext = rvm;
         }
-
-
     }
 }
