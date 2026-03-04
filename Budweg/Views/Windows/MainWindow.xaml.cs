@@ -19,55 +19,53 @@ namespace Budweg.Views.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        DispatcherTimer timer;
-
-        double panelWidth;
-        bool hidden;
         public MainWindow()
         {
             InitializeComponent();
-            timer = new();
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
-            timer.Tick += Timer_tick;
-
-            panelWidth = sidePanel.Width;
-
             //Main.Content = new FrontPage();
         }
 
-        private void Timer_tick(object? sender, EventArgs e)
+        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (hidden)
+            // Set tooltip visibility
+
+            if (Tg_Btn.IsChecked == true)
             {
-                sidePanel.Width += 1;
-                if (sidePanel.Width >= panelWidth)
-                {
-                    timer.Stop();
-                    hidden = false;
-                }
+                tt_home.Visibility = Visibility.Collapsed;
+                tt_register.Visibility = Visibility.Collapsed;
+                tt_overview.Visibility = Visibility.Collapsed;
             }
             else
             {
-                sidePanel.Width -= 1;
-                if (sidePanel.Width <= 30)
-                {
-                    timer.Stop();
-                    hidden = true;
-                }
+                tt_home.Visibility = Visibility.Visible;
+                tt_register.Visibility = Visibility.Visible;
+                tt_overview.Visibility = Visibility.Visible;
             }
         }
 
-        private void panelHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        //private void Tg_Btn_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    img_bg.Opacity = 1;
+        //}
+
+        //private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    img_bg.Opacity = 0.3;
+        //}
+
+        private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            Tg_Btn.IsChecked = false;
         }
 
-        private void sidePanelButton_Click(object sender, RoutedEventArgs e)
+        private void registerListView_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            timer.Start();
+            Main.Content = new RegCaliperPage();
+        }
+
+        private void homeListView_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Main.Content = new FrontPage();
         }
     }
 }

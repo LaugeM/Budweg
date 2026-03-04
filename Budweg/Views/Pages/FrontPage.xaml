@@ -11,18 +11,15 @@
     mc:Ignorable="d">
 
 
-    <Grid Background="Green" Margin="0,0,10,10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="auto" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="32*" />
-            <RowDefinition Height="185*" />
-        </Grid.RowDefinitions>
+    <Grid x:Name="BG" Margin="70,0,0,0">
 
-        <StackPanel HorizontalAlignment="Center">
-        </StackPanel>
-        <TextBlock TextWrapping="Wrap" Text="BUDWEG" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid.Background>
+
+            <ImageBrush x:Name="img_bg"
+        ImageSource="/icons/img_background.jpg"
+        Stretch="Fill"/>
+
+        </Grid.Background>
+
     </Grid>
 </Page>

@@ -12,8 +12,11 @@
     <None Remove="icons\add.png" />
     <None Remove="icons\edit.png" />
     <None Remove="icons\home.png" />
+    <None Remove="icons\img_background.jpg" />
     <None Remove="icons\list.png" />
     <None Remove="icons\menu.png" />
+    <None Remove="icons\tgBtn_default.png" />
+    <None Remove="icons\tgBtn_MouseOver.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,22 +30,10 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="icons\add.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="icons\edit.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="icons\home.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="icons\list.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="icons\menu.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="icons\**\*.*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
 </Project>
