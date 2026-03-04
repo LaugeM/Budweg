@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <None Remove="icons\add.png" />
+    <None Remove="icons\edit.png" />
+    <None Remove="icons\home.png" />
+    <None Remove="icons\img_background.jpg" />
+    <None Remove="icons\list.png" />
+    <None Remove="icons\menu.png" />
+    <None Remove="icons\tgBtn_default.png" />
+    <None Remove="icons\tgBtn_MouseOver.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,5 +29,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="icons\**\*.*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
 </Project>
