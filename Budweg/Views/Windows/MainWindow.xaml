@@ -15,7 +15,7 @@
             <RowDefinition Height="32*" />
             <RowDefinition Height="185*" />
         </Grid.RowDefinitions>
-        <Expander Margin="10" ExpandDirection="Right" Grid.Row="1" Grid.Column="0" Width="100">
+        <Expander Margin="10" ExpandDirection="Right" Grid.Row="1" Grid.Column="0" Width="auto">
             <StackPanel>
                 <Button x:Name="RegCaliperButton" Margin="0,10,0,0" Click="RegCaliperButton_Click">
                     <TextBlock TextWrapping="Wrap">Registrer kaliber</TextBlock>
