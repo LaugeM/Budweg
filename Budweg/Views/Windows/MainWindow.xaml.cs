@@ -21,6 +21,8 @@ namespace Budweg.Views.Windows
         public MainWindow()
         {
             InitializeComponent();
+
+            Main.Content = new FrontPage();
         }
 
         private void CaliperOverviewButton_Click(object sender, RoutedEventArgs e)
