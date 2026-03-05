@@ -76,7 +76,7 @@
 
                             <ToggleButton.Background>
 
-                                <ImageBrush ImageSource="/icons/menu.png"/>
+                                <ImageBrush ImageSource="/Icons/menu.png"/>
 
                             </ToggleButton.Background>
 
@@ -151,7 +151,7 @@
                             <StackPanel Orientation="Horizontal"
                                     Width="230">
 
-                                <Image Source="/icons/home.png"
+                                <Image Source="/Icons/home.png"
                                    Margin="0,0,0,0"/>
 
                                 <TextBlock Text="Hjem"
@@ -179,7 +179,7 @@
                             <StackPanel Orientation="Horizontal"
                                     Width="230">
 
-                                <Image Source="/icons/add.png"
+                                <Image Source="/Icons/add.png"
                                        Margin="0,0,0,0"/>
 
                                 <TextBlock Text="Registrer kaliber"
@@ -207,7 +207,7 @@
                             <StackPanel Orientation="Horizontal"
                                     Width="230">
 
-                                <Image Source="/icons/list.png"
+                                <Image Source="/Icons/list.png"
                                    Margin="0,0,0,0"/>
 
                                 <TextBlock Text="Kaliber oversigt"
