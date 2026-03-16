@@ -11,7 +11,6 @@ namespace Budweg.ViewModels
     {
         public RegCaliperViewModel() : base(new CaliperRepository())
         {
-            CurrentEntity.RegistrationDate = DateOnly.FromDateTime(DateTime.Now);
         }
 
         public ICommand AddCaliperCommand { get; } = new AddCaliperCommand();

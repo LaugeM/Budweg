@@ -38,40 +38,27 @@ namespace Budweg.Models
             {
                 con.Open();
 
-                // If no existing stampnumber, use database to create one
                 if (string.IsNullOrEmpty(caliper.StampNumber))
                 {
                     using SqlCommand cmd = new SqlCommand("dbo.GenerateStampNumber", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    caliper.StampNumber = cmd.ExecuteScalar().ToString();
+                    cmd.Parameters.AddWithValue("@Manufacturer", caliper.Manufacturer);
+                    cmd.Parameters.AddWithValue("@Approval", caliper.Approval);
+                    cmd.Parameters.AddWithValue("@ModelNumber", caliper.ModelNumber);
+                    caliper.StampNumber = cmd.ExecuteScalar().ToString().Trim();
                 }
                 else
                 {
-                    //Currently not being used, this is preparing for batch creation
-                    using SqlCommand cmd = new SqlCommand("dbo.GetTimesRenovated", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@StampNumber", caliper.StampNumber);
+                    using SqlCommand insert = new SqlCommand(@"
+                    INSERT INTO dbo.CALIPER (StampNumber, Manufacturer, Approval, ModelNumber)
+                    VALUES (@StampNumber, @Manufacturer, @Approval, @ModelNumber)", con);
 
-                    int timesRenovated = (int)cmd.ExecuteScalar();
+                    insert.Parameters.AddWithValue("@StampNumber", caliper.StampNumber);
+                    insert.Parameters.AddWithValue("@Manufacturer", caliper.Manufacturer);
+                    insert.Parameters.AddWithValue("@Approval", caliper.Approval);
+                    insert.Parameters.AddWithValue("@ModelNumber", caliper.ModelNumber);
+                    insert.ExecuteNonQuery();
                 }
-
-                //StampNumber is guaranteed to be set now
-                using SqlCommand insert = new SqlCommand(@"
-                INSERT INTO dbo.CALIPER 
-                    (StampNumber, BatchNumber, Manufacturer, Approval, ModelNumber, RegistrationDate)
-                VALUES 
-                    (@StampNumber, @BatchNumber, @Manufacturer, @Approval, @ModelNumber, @RegistrationDate)", con);
-
-                insert.Parameters.AddWithValue("@StampNumber", caliper.StampNumber);
-                insert.Parameters.AddWithValue("@BatchNumber", (object?)caliper.BatchNumber ?? DBNull.Value);
-                insert.Parameters.AddWithValue("@Manufacturer", caliper.Manufacturer);
-                insert.Parameters.AddWithValue("@Approval", caliper.Approval);
-                insert.Parameters.AddWithValue("@ModelNumber", caliper.ModelNumber);
-                insert.Parameters.AddWithValue("@RegistrationDate", caliper.RegistrationDate);
-
-                insert.ExecuteNonQuery();
-
             }
         }
     }
