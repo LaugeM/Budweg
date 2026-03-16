@@ -16,7 +16,7 @@
         <Grid.Background>
 
             <ImageBrush x:Name="img_bg"
-        ImageSource="/icons/img_background.jpg"
+        ImageSource="/Icons/img_background.jpg"
         Stretch="Fill"/>
 
         </Grid.Background>

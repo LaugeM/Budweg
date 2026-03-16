@@ -9,14 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="icons\add.png" />
-    <None Remove="icons\edit.png" />
-    <None Remove="icons\home.png" />
-    <None Remove="icons\img_background.jpg" />
-    <None Remove="icons\list.png" />
-    <None Remove="icons\menu.png" />
-    <None Remove="icons\tgBtn_default.png" />
-    <None Remove="icons\tgBtn_MouseOver.png" />
+    <None Remove="Icons\add.png" />
+    <None Remove="Icons\edit.png" />
+    <None Remove="Icons\home.png" />
+    <None Remove="Icons\img_background.jpg" />
+    <None Remove="Icons\list.png" />
+    <None Remove="Icons\menu.png" />
+    <None Remove="Icons\tgBtn_default.png" />
+    <None Remove="Icons\tgBtn_MouseOver.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +31,7 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Content Include="icons\**\*.*">
+		<Content Include="Icons\**\*.*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>

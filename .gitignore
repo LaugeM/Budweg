@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # appsettings
 appsettings.json
+/.github/copilot-instructions.md

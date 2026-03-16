@@ -12,6 +12,8 @@ namespace Budweg.ViewModels
         protected TEntity entity = new();
         protected BaseRepo<TEntity> entityRepo;
 
+        private bool _isAdding = false;
+
         protected BaseRegisterViewModel(BaseRepo<TEntity> repo)
         {
             entityRepo = repo;
@@ -38,9 +40,19 @@ namespace Budweg.ViewModels
 
         public void AddToRepo()
         {
-            if (CheckEntity())
+            if (_isAdding) return;  // Ignore the second click
+
+            _isAdding = true;
+            try
             {
-                entityRepo.Add(entity);
+                if (CheckEntity())
+                {
+                    entityRepo.Add(entity);
+                }
+            }
+            finally
+            {
+                _isAdding = false;
             }
         }
     }
