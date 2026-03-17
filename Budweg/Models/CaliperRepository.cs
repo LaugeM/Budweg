@@ -64,7 +64,7 @@ namespace Budweg.Models
                     }
                 }
 
-                // Always insert a renovation record, regardless of which "route"
+                // Always insert a renovation record, regardless of which "route" we took
                 using SqlCommand renovationCmd = new SqlCommand(@"
                 INSERT INTO dbo.RENOVATION (StampNumber, RegistrationDate)
                 VALUES (@StampNumber, @RegistrationDate);", con);
