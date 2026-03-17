@@ -14,24 +14,6 @@ namespace Budweg.Models
         {
         }
 
-        //public override void Add(Caliper caliper)
-        //{
-        //    using (SqlConnection con = CreateConnection())
-        //    {
-        //        con.Open();
-        //        using (SqlCommand cmd = new SqlCommand("INSERT INTO CALIPER (Manufacturer, Approval, ModelNumber, RegistrationDate) " +
-        //        "VALUES(@Manufacturer,@Approval,@ModelNumber,@RegistrationDate)" +
-        //        "SELECT @@IDENTITY", con))
-        //        {
-        //            cmd.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = caliper.Manufacturer;
-        //            cmd.Parameters.Add("@Approval", SqlDbType.Bit).Value = caliper.Approval;
-        //            cmd.Parameters.Add("@ModelNumber", SqlDbType.NVarChar).Value = caliper.ModelNumber;
-        //            cmd.Parameters.Add("@RegistrationDate", SqlDbType.Date).Value = caliper.RegistrationDate;
-        //            var result = cmd.ExecuteScalar();
-        //        }
-        //    }
-        //}
-
         public override void Add(Caliper caliper)
         {
             using (SqlConnection con = CreateConnection())
@@ -82,7 +64,7 @@ namespace Budweg.Models
                     }
                 }
 
-                // Always insert a renovation record, regardless of which branch we took
+                // Always insert a renovation record, regardless of which "route"
                 using SqlCommand renovationCmd = new SqlCommand(@"
                 INSERT INTO dbo.RENOVATION (StampNumber, RegistrationDate)
                 VALUES (@StampNumber, @RegistrationDate);", con);
