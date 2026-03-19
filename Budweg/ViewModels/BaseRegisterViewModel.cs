@@ -40,7 +40,7 @@ namespace Budweg.ViewModels
 
         public void AddToRepo()
         {
-            if (_isAdding) return;  // Ignore the second click
+            if (_isAdding) return;  // Make sure it doesnt run before previous qeury completed
 
             _isAdding = true;
             try

@@ -13,5 +13,11 @@ namespace Budweg.Models
         public override void Add(Employee employee)
         {
         }
+
+        public override List<Employee> GetAll()
+        {
+            List<Employee> employees = new();
+            return employees;
+        }
     }
 }
