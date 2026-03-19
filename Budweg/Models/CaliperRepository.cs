@@ -75,5 +75,31 @@ namespace Budweg.Models
                 caliper.StampNumber = null;
             }
         }
+
+        public override List<Caliper> GetAll()
+        {
+            List<Caliper> calipers = new List<Caliper>();
+            using (SqlConnection con = CreateConnection())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT StampNumber, Manufacturer, Approval, ModelNumber, TimesRenovated FROM Caliper", con);
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Caliper caliper = new Caliper
+                            {
+                                StampNumber = (string)dr["StampNumber"],
+                                Manufacturer = (string)dr["Manufacturer"],
+                                Approval = (bool)dr["Approval"],
+                                ModelNumber = (string)dr["ModelNumber"],
+                                TimesRenovated = (int?)dr["TimesRenovated"]
+                            };
+                        calipers.Add(caliper);
+                    }
+                }
+            }
+            return calipers;
+        }
     }
 }

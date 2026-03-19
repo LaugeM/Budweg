@@ -10,17 +10,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Budweg.ViewModels;
 
 namespace Budweg.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for CaliperOverviewPage.xaml
+    /// Interaction logic for CaliperListPage.xaml
     /// </summary>
-    public partial class CaliperOverviewPage : Page
+    public partial class CaliperListPage : Page
     {
-        public CaliperOverviewPage()
+        public CaliperListPage()
         {
             InitializeComponent();
+            DataContext = new CaliperListViewModel();
         }
     }
 }

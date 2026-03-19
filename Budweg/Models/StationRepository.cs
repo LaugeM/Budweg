@@ -13,5 +13,11 @@ namespace Budweg.Models
         public override void Add(Station station)
         {
         }
+
+        public override List<Station> GetAll()
+        {
+            List<Station> stations = new();
+            return stations;
+        }
     }
 }
