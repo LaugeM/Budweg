@@ -57,5 +57,10 @@ namespace Budweg.Views.Windows
         {
             Main.Content = new FrontPage();
         }
+
+        private void overviewListView_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Main.Content = new CaliperListPage();
+        }
     }
 }

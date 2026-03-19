@@ -28,5 +28,7 @@ namespace Budweg.Models
         }
 
         public abstract void Add(TEntity entity);
+
+        public abstract List<TEntity> GetAll();
     }
 }

@@ -216,7 +216,8 @@
                             x:Name="overviewListView"
                             Margin="0,0,0,15"
                             HorizontalAlignment="Left"
-                            MouseEnter="ListViewItem_MouseEnter">
+                            MouseEnter="ListViewItem_MouseEnter"
+                            PreviewMouseLeftButtonDown="overviewListView_PreviewMouseLeftButtonDown">
 
                             <StackPanel Width="230" Orientation="Horizontal">
 
